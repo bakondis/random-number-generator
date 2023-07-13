@@ -1,7 +1,6 @@
 package hu.bakondis.randomnumbergenerator.api;
 
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2023-07-12T08:26:44.398771931Z[GMT]")
 public class ApiResponseMessage {
     public static final int ERROR = 1;
     public static final int WARNING = 2;

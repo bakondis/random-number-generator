@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import javax.servlet.http.HttpServletRequest;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2023-07-12T08:26:44.398771931Z[GMT]")
 @RestController
 public class GetRandomNumberApiController implements GetRandomNumberApi {
 
