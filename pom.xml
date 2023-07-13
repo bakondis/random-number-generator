@@ -4,7 +4,7 @@
     <artifactId>random-number-generator</artifactId>
     <packaging>jar</packaging>
     <name>swagger-spring</name>
-    <version>1.0.0</version>
+    <version>0.0.1-SNAPSHOT</version>
     <properties>
         <java.version>11</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
