@@ -95,4 +95,5 @@ jobs:
           environment_name: Random-number-generator-env
           version_label: ${{github.SHA}}
           region: eu-north-1
+          wait_for_environment_recovery: 300
           deployment_package: random-number-generator-0.0.1-SNAPSHOT.jar
