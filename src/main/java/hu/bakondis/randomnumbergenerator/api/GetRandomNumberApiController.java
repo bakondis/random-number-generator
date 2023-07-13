@@ -55,4 +55,8 @@ public class GetRandomNumberApiController implements GetRandomNumberApi {
         return new ResponseEntity<RandomNumber>(HttpStatus.NOT_IMPLEMENTED);
     }
 
+    @Override
+    public String healthCheck() {
+        return "OK";
+    }
 }

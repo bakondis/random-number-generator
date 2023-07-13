@@ -36,5 +36,11 @@ public interface GetRandomNumberApi {
     ResponseEntity<RandomNumber> getRandomNumber(@Parameter(in = ParameterIn.PATH, description = "the minimum number", required = true, schema = @Schema()) @PathVariable("minNumber") Long minNumber,
                                                  @Parameter(in = ParameterIn.PATH, description = "the maximum number", required = true, schema = @Schema()) @PathVariable("maxNumber") Long maxNumber);
 
+
+    @RequestMapping(value = "/",
+                    produces = {"text/plain"},
+                    method = RequestMethod.GET)
+    public String healthCheck();
+
 }
 
