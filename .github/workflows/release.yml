@@ -1,9 +1,9 @@
-name: QA Pipeline
+name: Release Pipeline
 on:
   workflow_dispatch:
     inputs:
       version_label:
-        description: 'Version id:'
+        description: 'Version label:'
         required: true
         type: string
       environment:
@@ -27,7 +27,6 @@ jobs:
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          use_existing_version_if_available: false
           application_name: random-number-generator
           environment_name: ${{ vars.ENVIRONMENT_NAME }}
           version_label: '${{ github.event.inputs.version_label }}'
