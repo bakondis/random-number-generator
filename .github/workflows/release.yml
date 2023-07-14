@@ -1,0 +1,35 @@
+name: QA Pipeline
+on:
+  workflow_dispatch:
+    inputs:
+      version_label:
+        description: 'Version id:'
+        required: true
+        type: string
+      environment:
+        description: 'Environment (QA,PROD) :'
+        required: true
+        type: string
+
+jobs:
+  deploy:
+    environment:
+      name: '${{ github.event.inputs.environment }}'
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download JAR
+        uses: actions/download-artifact@v2
+        with:
+          name: artifact
+      - name: Deploy to EB
+        uses: einaregilsson/beanstalk-deploy@v13
+        with:
+          aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          use_existing_version_if_available: false
+          application_name: random-number-generator
+          environment_name: ${{ vars.ENVIRONMENT_NAME }}
+          version_label: '${{ github.event.inputs.version_label }}'
+          region: eu-north-1
+          wait_for_environment_recovery: 120
