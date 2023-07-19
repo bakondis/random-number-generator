@@ -34,7 +34,7 @@ public class GeneratorTest {
 
         RandomNumber randomNumber = mapper.readValue(result, RandomNumber.class);
 
-        assertTrue(randomNumber.getRandomNumber() >= MIN_VALUE && randomNumber.getRandomNumber() <= MAX_VALUE);
-        //assertTrue(randomNumber.getRandomNumber() <= MIN_VALUE && randomNumber.getRandomNumber() >= MAX_VALUE);
+        //assertTrue(randomNumber.getRandomNumber() >= MIN_VALUE && randomNumber.getRandomNumber() <= MAX_VALUE);
+        assertTrue(randomNumber.getRandomNumber() <= MIN_VALUE && randomNumber.getRandomNumber() >= MAX_VALUE);
     }
 }
